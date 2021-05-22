@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+	<head><title>Login</title></head>
+	<body>
+		<form method='post'>
+			{% csrf_token %}
+			{{form.as_p}}
+			<input type='submit' value='Login'>
+		</form>
+		{% for message in messages %}
+		<a class='close' data-dismiss='alert'>{{message}}</a>
+		{% endfor %}
+
+	</body>
+</html>
