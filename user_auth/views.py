@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 
 # Create your views here.
+
+
 def user_login(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -23,4 +25,4 @@ def user_login(request):
 
 def user_logout(request):
     logout(request)
-    return redirect('user_login')
+    return render(request, 'user_auth/logout.html')
