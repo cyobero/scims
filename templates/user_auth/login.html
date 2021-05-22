@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+<!doctype html>
+{% block content %}
+<form method='post'>
+	{% csrf_token %}
+	{{form.as_p}}
+	<input type='submit' value='Login'>
+</form>
+<small>Don't have an account? <a href="{% url 'user_signup' %}">Sign up</small></p>
+{% for message in messages %}
+<a class='close' data-dismiss='alert'>{{message}}</a>
+{% endfor %}
+{% endblock %}
