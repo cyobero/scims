@@ -8,18 +8,18 @@
 
 {% block navbar %}
 
-<nav class="navbar navbar-dark bg-dark py-1">
+<nav class="navbar navbar-custom navbar-dark bg-dark py-0">
   <div id="mySidebar" class="sidebar navbar-nav">
     <ul class="navbar-nav mr-auto">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <li class="nav-item"><a class href="#">About</a></li>
-    <li class="nav-item"><a class href="#">Services</a></li>
-    <li class="nav-item"><a class href="#">Clients</a></li>
-    <li class="nav-item"><a class href="#">Contact</a></li>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <li class="nav-item"><a class href="#">About</a></li>
+      <li class="nav-item"><a class href="#">Services</a></li>
+      <li class="nav-item"><a class href="#">Clients</a></li>
+      <li class="nav-item"><a class href="#">Contact</a></li>
     </ul>
-      {% if request.user.is_authenticated %}
-      <li class="nav-item"><a href="{% url 'user_logout' %}">Log out</a></li>
-      {% endif %}
+    {% if request.user.is_authenticated %}
+    <li class="nav-item"><a href="{% url 'user_logout' %}">Log out</a></li>
+    {% endif %}
   </div>
 
   <div id="main">
@@ -30,12 +30,18 @@
 
 
 {% block content %}
-<h1>home page</h1>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-6">
+    <h1>home page</h1>
 
-{% if request.user.is_authenticated %}
-<h2>hello, {{request.user.username}}</h2>
-{% endif %}
+    {% if request.user.is_authenticated %}
+    <h2>hello, {{request.user.username}}</h2>
+    {% endif %}
+  </div>
 
+  <div class="col-md-4"></div>
+</div>
 {% block scripts %}
 <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
 {% endblock %}
