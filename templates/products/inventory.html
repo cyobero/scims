@@ -3,6 +3,7 @@
 {% block title %} Product Inventory {% endblock %}
 
 {% block content %}
+<div class="row"></div>
 <div class="container">
     <div class="row">
         <div class="col-md-2 col-lg-1"></div>
@@ -12,13 +13,15 @@
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Price</th>
+                    <th scope="col">In Stock</th>
                 </thead>
                 <tbody>
                     {% for product in products %}
                     <tr>
-                        <td>{{product.id}}</td>
-                        <td>{{product.name}}</td>
-                        <Td>{{product.price}}</td>
+                        <td>{{product.product.id}}</td>
+                        <td>{{product.product.name}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.quantity}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

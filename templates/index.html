@@ -13,9 +13,7 @@
     <ul class="navbar-nav mr-auto">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <li class="nav-item"><a class href="#">About</a></li>
-      <li class="nav-item"><a class href="#">Services</a></li>
-      <li class="nav-item"><a class href="#">Clients</a></li>
-      <li class="nav-item"><a class href="#">Contact</a></li>
+      <li class="nav-item"><a class href="{% url 'inventory' %}">Inventory</a></li>
     </ul>
     {% if request.user.is_authenticated %}
     <li class="nav-item"><a href="{% url 'user_logout' %}">Log out</a></li>
