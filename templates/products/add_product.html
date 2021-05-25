@@ -1,0 +1,15 @@
+{% extends 'products/inventory.html' %}
+
+{% block title %}Add New Product{% endblock %}
+
+{% block content %}
+<form class='form-control' method='post'>
+	{% csrf_token %}
+	{{form.as_p}}
+	<input type='submit' value='Add'>
+</form>
+
+{% for message in messages %}
+<small>{{message}}</small>
+{% endfor %}
+{% endblock %}

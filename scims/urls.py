@@ -19,7 +19,7 @@ from django.conf.urls.static import static
 from django.urls import path
 from scims.views import home
 from user_auth.views import user_login, user_logout, user_signup
-from products.views import inventory_view
+from products.views import inventory_view,  add_product_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,7 +27,8 @@ urlpatterns = [
     path('login/', user_login, name='user_login'),
     path('logout/', user_logout, name='user_logout'),
     path('signup/', user_signup, name='user_signup'),
-    path('inventory/', inventory_view, name='inventory')
+    path('inventory/', inventory_view, name='inventory'),
+    path('inventory/add_product', add_product_view, name='add_product')
 ]
 
 if settings.DEBUG:

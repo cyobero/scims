@@ -12,7 +12,7 @@
   <div id="mySidebar" class="sidebar navbar-nav">
     <ul class="navbar-nav mr-auto">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <li class="nav-item"><a class href="#">About</a></li>
+      <li class="nav-item"><a class href="{% url 'home' %}">Home</a></li>
       <li class="nav-item"><a class href="{% url 'inventory' %}">Inventory</a></li>
     </ul>
     {% if request.user.is_authenticated %}

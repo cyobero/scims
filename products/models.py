@@ -25,3 +25,13 @@ class Flower(Product):
 
 class PreRoll(Flower):
     pass
+
+
+class Edible(Product):
+    thc_content = models.DecimalField(verbose_name='THC (%)', max_digits=4,
+                                      decimal_places=1, blank=True, null=True)
+    calories = models.DecimalField(max_digits=4, decimal_places=1, blank=True, null=True)
+
+
+class Vape(Flower):
+    pass
