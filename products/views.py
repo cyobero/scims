@@ -2,14 +2,17 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from products.inventory.models import ProductStock
 from products.forms import ProductStockForm
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
+@login_required(login_url='user_login')
 def inventory_view(request):
     products = ProductStock.objects.all()
     return render(request, 'products/inventory.html', {'products': products})
 
 
+@login_required(login_url='user_login')
 def add_product_view(request):
     if request.method == 'POST':
         form = ProductStockForm(request.POST)
