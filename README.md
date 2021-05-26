@@ -9,6 +9,7 @@ User auth:
 - ~~create product models~~
 - add styling
 - ~~add navbar~~
-- add form where users can enter products into inventory
+- ~~add form where users can enter products into inventory~~
 - add interactive charts for analytics
 - create loyalty program to keep track of customer purchases
+- make inventory view filterable/sortable

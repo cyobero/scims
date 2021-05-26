@@ -16,7 +16,8 @@ PRODUCT_FORMS = {
 
 @login_required(login_url='user_login')
 def inventory_view(request):
-    products = Product.objects.all()
+    # retrieve only objects that are in stock
+    products = Product.objects.filter(quantity__gte=1)
     return render(request, 'products/inventory.html', {'products': products})
 
 
