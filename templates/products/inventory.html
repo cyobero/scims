@@ -12,14 +12,18 @@
                 <thead class="thead-dark">
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
+                    <th scope='category'>Category</th>
+                    <th scope="col">Net weight (g)</th>
                     <th scope="col">Price</th>
-                    <th scope="col">In Stock</th>
+                    <th scope="col">Qty. In Stock</th>
                 </thead>
                 <tbody>
                     {% for product in products %}
                     <tr>
                         <td>{{product.id}}</td>
-                        <td>{{product.product.name}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.CATEGORY}}</td>
+                        <td>{{product.net_weight}}</td>
                         <td>{{product.price}}</td>
                         <td>{{product.quantity}}</td>
                     </tr>
