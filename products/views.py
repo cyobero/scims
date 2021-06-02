@@ -28,7 +28,7 @@ def add_product_view(request):
     if product_type is not None:
         form = PRODUCT_FORMS[product_type]
         if request.method == 'POST':
-            form = form(request.POST)
+            form = form(request.POST, request.FILES)
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Added product')

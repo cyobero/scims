@@ -4,23 +4,23 @@
 
 {% block content %}
 <div class='container'>
-<form class='form-group'>
-	<p>Please select product type</p>
-	<label for='product_type'>Product Type: </label>
-	<select name='product_type' id='product_type' onchange='this.form.submit()'>
-		<option value=''>--------</option>
-		<option value='Product'>Product</option>
-		<option value='Flower'>Flower</option>
-		<option value='Pre-Roll'>Pre-Roll</option>
-		<option value='Edible'>Edible</option>
-		<option value='Vape'>Vape</option>
-	</select>
-</form>
+	<form class='form-group' >
+		<p>Please select product type</p>
+		<label for='product_type'>Product Type: </label>
+		<select name='product_type' id='product_type' onchange='this.form.submit()'>
+			<option value=''>----------</option>
+			<option value='Product'>Product</option>
+			<option value='Flower'>Flower</option>
+			<option value='Pre-Roll'>Pre-Roll</option>
+			<option value='Edible'>Edible</option>
+			<option value='Vape'>Vape</option>
+		</select>
+	</form>
 </div>
 
 {% if form %}
 <div class='container'>
-	<form method='post' class='form-control'>
+	<form method='post' class='form-control' enctype="multipart/form-data">
 		{% csrf_token %}
 		{{form.as_p}}
 		<input type='submit' value='add product'>
