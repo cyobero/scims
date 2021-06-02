@@ -20,7 +20,7 @@
                     {% for product in products %}
                     <tr>
                         <td>{{product.id}}</td>
-                        <td>{{product.name}}</td>
+                        <td><a href="{% url 'product' slug=product.slug %}">{{product.name}}</a></td>
                         <td>{{product.net_weight}}</td>
                         <td>{{product.price}}</td>
                         <td>{{product.quantity}}</td>

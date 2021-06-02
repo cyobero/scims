@@ -36,3 +36,9 @@ def add_product_view(request):
         return render(request, 'products/add_product.html', {'product_type': product_type,
                                                              'form': form})
     return render(request, 'products/add_product.html', {'product_type': product_type})
+
+
+@login_required(login_url='user_login')
+def product_view(request, slug):
+    product = Product.objects.get(slug=slug)
+    return render(request, 'products/product.html', {'product': product})
