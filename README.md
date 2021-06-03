@@ -4,7 +4,7 @@ A simple inventory management software for dispensaries.
 TODO
 ==================================
 User auth:
-	- user registration
+	- ~~user registration~~
 
 - ~~create product models~~
 - add styling
@@ -12,4 +12,4 @@ User auth:
 - ~~add form where users can enter products into inventory~~
 - add interactive charts for analytics
 - create loyalty program to keep track of customer purchases
-- make inventory view filterable/sortable
+- ~~make inventory view filterable/sortable~~
