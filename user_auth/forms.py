@@ -1,19 +1,21 @@
 from django.contrib.auth.forms import UserCreationForm, ValidationError
+from django import forms
 from django.contrib.auth.models import User
-from django.forms import EmailField, PasswordInput
 
 
 class UserCreationForm(UserCreationForm):
-    email = EmailField(label='email address', required=True)
+    email = forms.EmailField(label='Email address (optional)', required=False,
+                             widget=forms.EmailInput(attrs={'class': 'form-control'}))
 
     def __init__(self, *args, **kwargs):
         super(UserCreationForm, self).__init__(*args, **kwargs)
         for fieldname in ['username', 'password1', 'password2']:
+            self.fields[fieldname].widget.attrs.update({'class': 'form-control'})
             self.fields[fieldname].help_text = None
 
     class Meta:
         model = User
-        fields = ('email', 'username', 'password1', 'password2')
+        fields = ('username', 'email', 'password1', 'password2')
 
     def clean_email(self):
         email = self.cleaned_data.get('email')

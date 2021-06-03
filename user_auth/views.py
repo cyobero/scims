@@ -35,10 +35,8 @@ def user_signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            email = form.cleaned_data.get('email')
             username = form.cleaned_data.get('username')
             password1 = form.cleaned_data.get('password1')
-            password2 = form.cleaned_data.get('password2')
             user = authenticate(username=username, password=password1)
             login(request, user)
             return redirect('home')
