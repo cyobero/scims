@@ -13,7 +13,7 @@ class Product(models.Model):
                                      null=True)
     quantity = models.IntegerField(default=1)
     price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
-    date_added = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    date_added = models.DateField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -22,7 +22,6 @@ class Product(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         super(Product, self).save(args, **kwargs)
-
 
 
 FLOWER_TYPE_CHOICES = (
