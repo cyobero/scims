@@ -3,7 +3,19 @@ from django.contrib import messages
 from products.forms import NewProductForm, NewFlowerForm, NewPreRollForm, NewEdibleForm, NewVapeForm
 from products.models import Product
 from django.contrib.auth.decorators import login_required
+from datatableview import Datatable
+from datatableview.views import DatatableView
 # Create your views here.
+
+class ProductConfigDataTableView(DatatableView):
+
+    model = Product
+
+    class datatable_class(Datatable):
+
+        class Meta:
+            model = Product
+            columns = ['id', 'name', 'price', 'quantity', 'date_added']
 
 PRODUCT_FORMS = {
     'Product': NewProductForm,
