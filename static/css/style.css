@@ -28,6 +28,10 @@
   color: #f1f1f1;
 }
 
+.body {
+  background-color: #2C2C2C
+}
+
 /* Position and style the close button (top right corner) */
 .sidebar .closebtn {
   position: absolute;
@@ -68,3 +72,7 @@
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 } 
+
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+

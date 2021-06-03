@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'scims.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'scims',
+        'NAME': 'scims_dev',
         'HOST': '127.0.0.1',
         'PORT': 3306,
         'USER': 'root',
